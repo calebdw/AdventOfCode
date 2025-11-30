@@ -94,14 +94,14 @@ class Day05 extends AocDay
         return $ranges->all();
     }
 
-    public function partOne(): mixed
+    protected function partOne(): mixed
     {
         return $this->seeds
             ->map(fn ($seed) => $this->walk('seed', 'location', $seed, 1)[0])
             ->min();
     }
 
-    public function partTwo(): mixed
+    protected function partTwo(): mixed
     {
         $ranges = $this->seeds
             ->sliding(2, step: 2)

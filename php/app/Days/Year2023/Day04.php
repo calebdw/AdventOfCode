@@ -16,7 +16,7 @@ class Day04 extends AocDay
     /** @var array<int, int> */
     protected array $totalCounts = [];
 
-    public function partOne(): mixed
+    protected function partOne(): mixed
     {
         $this->cards = $this->lines
             ->filter()
@@ -26,7 +26,7 @@ class Day04 extends AocDay
         return $this->cards->sum(fn ($card) => $card->score());
     }
 
-    public function partTwo(): mixed
+    protected function partTwo(): mixed
     {
         $this->cards->reverse()->each(fn ($card) => $this->addCount($card->id));
 

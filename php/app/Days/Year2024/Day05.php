@@ -35,14 +35,14 @@ class Day05 extends AocDay
             ->map(fn ($update) => $update[(int) floor(count($update) / 2)]);
     }
 
-    public function partOne(): ?string
+    protected function partOne(): ?string
     {
         return (string) $this->pages
             ->reject(fn ($_, $index) => $this->changed[$index])
             ->sum();
     }
 
-    public function partTwo(): ?string
+    protected function partTwo(): ?string
     {
         return (string) $this->pages
             ->filter(fn ($_, $index) => $this->changed[$index])

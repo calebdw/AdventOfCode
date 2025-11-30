@@ -29,11 +29,11 @@ abstract class AocDay
         $parts = [null, null];
 
         if ($part !== 2) {
-            $parts[0] = $this->profile(fn () => $this->partOne($input));
+            $parts[0] = $this->profile(fn () => $this->partOne());
         }
 
         if ($part !== 1) {
-            $parts[1] = $this->profile(fn () => $this->partTwo($input));
+            $parts[1] = $this->profile(fn () => $this->partTwo());
         }
 
         return $parts;

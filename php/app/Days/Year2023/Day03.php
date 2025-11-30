@@ -20,7 +20,7 @@ class Day03 extends AocDay
         $this->gears = collect();
     }
 
-    public function partOne(): mixed
+    protected function partOne(): mixed
     {
         $this->partNumbers = $this->lines
             ->map(function ($line) {
@@ -42,7 +42,7 @@ class Day03 extends AocDay
         return $this->partNumbers->sum('value');
     }
 
-    public function partTwo(): mixed
+    protected function partTwo(): mixed
     {
         return $this->gears
             ->groupBy('gear')

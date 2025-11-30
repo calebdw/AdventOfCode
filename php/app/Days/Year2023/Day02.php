@@ -17,7 +17,7 @@ class Day02 extends AocDay
         $this->bag = new Bag(red: 12, green: 13, blue: 14);
     }
 
-    public function partOne(): mixed
+    protected function partOne(): mixed
     {
         return $this->lines
             ->filter()
@@ -26,7 +26,7 @@ class Day02 extends AocDay
             ->sum('id');
     }
 
-    public function partTwo(): mixed
+    protected function partTwo(): mixed
     {
         return $this->lines
             ->filter()

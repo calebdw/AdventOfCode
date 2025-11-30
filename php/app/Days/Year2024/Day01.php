@@ -12,14 +12,14 @@ class Day01 extends AocDay
     /** @var Collection<int, list<int>> */
     private Collection $lists;
 
-    public function partOne(): ?string
+    protected function partOne(): ?string
     {
         return (string) $this->parseLists()
             ->pipe(fn ($lists) => collect($lists[0])->zip($lists[1]))
             ->reduce(fn ($c, $pair) => $c + abs($pair[1] - $pair[0]), 0);
     }
 
-    public function partTwo(): ?string
+    protected function partTwo(): ?string
     {
         $left = $right = [];
 

@@ -27,7 +27,7 @@ class Day11 extends AocDay
         $this->parseGalaxies();
     }
 
-    public function partOne(): mixed
+    protected function partOne(): mixed
     {
         $sum = 0;
 
@@ -41,7 +41,7 @@ class Day11 extends AocDay
         return $sum;
     }
 
-    public function partTwo(): mixed
+    protected function partTwo(): mixed
     {
         $this->galaxies = collect();
 

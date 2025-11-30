@@ -15,7 +15,7 @@ class Day03 extends AocDay
         $this->input = $input;
     }
 
-    public function partOne(): ?string
+    protected function partOne(): ?string
     {
         preg_match_all('/mul\((\d+,\d+)\)/', $this->input, $matches);
 
@@ -24,7 +24,7 @@ class Day03 extends AocDay
             ->sum();
     }
 
-    public function partTwo(): ?string
+    protected function partTwo(): ?string
     {
         preg_match_all("/mul\(\d+,\d+\)|do\(\)|don't\(\)/", $this->input, $matches);
 

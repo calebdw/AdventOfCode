@@ -28,14 +28,14 @@ class Day12 extends AocDay
         });
     }
 
-    public function partOne(): mixed
+    protected function partOne(): mixed
     {
         return $this->springs
             ->map(fn ($spring) => $spring->arrangements())
             ->sum();
     }
 
-    public function partTwo(): mixed
+    protected function partTwo(): mixed
     {
         return null;
     }

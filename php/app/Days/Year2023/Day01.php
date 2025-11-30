@@ -10,7 +10,7 @@ use Illuminate\Support\Collection;
 
 class Day01 extends AocDay
 {
-    public function partOne(): int
+    protected function partOne(): int
     {
         return $this->concatAndSum(
             $this->lines
@@ -18,7 +18,7 @@ class Day01 extends AocDay
         );
     }
 
-    public function partTwo(): int
+    protected function partTwo(): int
     {
         $digits = [
             1  => 'one',

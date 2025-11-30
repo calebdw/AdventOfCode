@@ -24,7 +24,7 @@ class Day06 extends AocDay
             ->map(fn ($race) => new Race((int) $race[0], (int) $race[1]));
     }
 
-    public function partOne(): mixed
+    protected function partOne(): mixed
     {
         return $this->races
             ->map(fn ($race) => $race->timeToBeatRecord())
@@ -32,7 +32,7 @@ class Day06 extends AocDay
             ->reduce(fn ($carry, $race) => $carry * $race, 1);
     }
 
-    public function partTwo(): mixed
+    protected function partTwo(): mixed
     {
         $this->races = collect([new Race(
             (int) Str::of($this->lines[0])->after(':')->remove(' ')->toString(),

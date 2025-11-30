@@ -8,7 +8,7 @@ use App\Days\AocDay;
 
 class Day09 extends AocDay
 {
-    public function partOne(): mixed
+    protected function partOne(): mixed
     {
         return $this->lines
             ->filter()
@@ -16,7 +16,7 @@ class Day09 extends AocDay
             ->sum();
     }
 
-    public function partTwo(): mixed
+    protected function partTwo(): mixed
     {
         return $this->lines
             ->filter()

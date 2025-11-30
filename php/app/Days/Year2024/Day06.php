@@ -34,14 +34,14 @@ class Day06 extends AocDay
         $this->guard = new Guard(...$this->start);
     }
 
-    public function partOne(): ?string
+    protected function partOne(): ?string
     {
         $this->patrol();
 
         return (string) count($this->guard->visited);
     }
 
-    public function partTwo(): ?string
+    protected function partTwo(): ?string
     {
         $loops = 0;
         $visited = array_keys($this->guard->visited);

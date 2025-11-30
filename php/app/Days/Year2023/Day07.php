@@ -21,7 +21,7 @@ class Day07 extends AocDay
             ->map(fn ($line) => $this->parseHand($line));
     }
 
-    public function partOne(): mixed
+    protected function partOne(): mixed
     {
         return $this->hands
             ->sortBy([
@@ -33,7 +33,7 @@ class Day07 extends AocDay
             ->sum();
     }
 
-    public function partTwo(): mixed
+    protected function partTwo(): mixed
     {
         Hand::hasJokers(true);
 

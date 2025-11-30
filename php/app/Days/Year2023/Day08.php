@@ -27,7 +27,7 @@ class Day08 extends AocDay
         $this->nodes = $this->parseNodes($nodes);
     }
 
-    public function partOne(): mixed
+    protected function partOne(): mixed
     {
         return $this->walk(
             from: $this->nodes['AAA'],
@@ -35,7 +35,7 @@ class Day08 extends AocDay
         );
     }
 
-    public function partTwo(): mixed
+    protected function partTwo(): mixed
     {
         return $this->nodes
             ->filter(fn ($node) => $node->value[2] === 'A')

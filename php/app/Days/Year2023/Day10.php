@@ -35,7 +35,7 @@ class Day10 extends AocDay
         $this->tileXCount = $this->tiles->first()->count();
     }
 
-    public function partOne(): mixed
+    protected function partOne(): mixed
     {
         foreach (Direction::cases() as $dir) {
             if ($this->walk($this->squirrel, $dir)) {
@@ -46,7 +46,7 @@ class Day10 extends AocDay
         return round(count($this->path) / 2);
     }
 
-    public function partTwo(): mixed
+    protected function partTwo(): mixed
     {
         if (count($this->path) === 0) {
             $this->partOne();

@@ -25,7 +25,7 @@ class Day07 extends AocDay
             ->all();
     }
 
-    public function partOne(): ?string
+    protected function partOne(): ?string
     {
         return (string) collect($this->equations)
             ->filter(fn ($values, $total) => $this->evaluate($total, $values))
@@ -33,7 +33,7 @@ class Day07 extends AocDay
             ->sum();
     }
 
-    public function partTwo(): ?string
+    protected function partTwo(): ?string
     {
         return (string) collect($this->equations)
             ->filter(fn ($values, $total) => $this->evaluate($total, $values, true))

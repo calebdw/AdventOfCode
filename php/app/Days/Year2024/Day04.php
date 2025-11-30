@@ -19,7 +19,7 @@ class Day04 extends AocDay
             ->toArray();
     }
 
-    public function partOne(): ?string
+    protected function partOne(): ?string
     {
         $result = 0;
         $needle = 'XMAS';
@@ -52,7 +52,7 @@ class Day04 extends AocDay
         return (string) $result;
     }
 
-    public function partTwo(): ?string
+    protected function partTwo(): ?string
     {
         $result = 0;
         $needle = 'MAS';
