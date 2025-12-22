@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 use Symfony\Component\Finder\Finder;
 use RuntimeException;
+use function Laravel\Prompts\confirm;
 
 /** @phpstan-import-type ProfiledResult from ProfilesClosures */
 class Aoc extends Command
@@ -54,6 +55,10 @@ class Aoc extends Command
                     $this->formatProfile($result),
                 );
 
+                $this->components->twoColumnDetail('Part one', $this->formatResult($result['value'][0]));
+                $this->components->twoColumnDetail('Part two', $this->formatResult($result['value'][1]));
+                $this->newLine();
+
                 if ($this->option('submit')) {
                     if (($result['value'][1]['value'] ?? null) === null) {
                         $this->submit($year, $day, 1, $result['value'][0]['value']);
@@ -61,10 +66,6 @@ class Aoc extends Command
                         $this->submit($year, $day, 2, $result['value'][1]['value']);
                     }
                 }
-
-                $this->components->twoColumnDetail('Part one', $this->formatResult($result['value'][0]));
-                $this->components->twoColumnDetail('Part two', $this->formatResult($result['value'][1]));
-                $this->newLine();
             });
     }
 
@@ -131,6 +132,12 @@ class Aoc extends Command
 
     private function submit(string $year, AocDay $day, int $level, string $answer): void
     {
+        $confirmed = confirm("Would you like to submit [{$answer}] as the answer for {$day->label()} Part {$level}?");
+
+        if (! $confirmed) {
+            return;
+        }
+
         $session = env('AOC_SESSION');
         $body = Http::asForm()
             ->withHeaders([
